@@ -242,6 +242,9 @@ export default {
       if (this.isNextPossible) {
         this.isLastSlide ? this.goSlide(0) : this.goSlide(this.currentIndex + 1)
       }
+      if (this.player !== null) {
+        this.player.stopVideo();
+      }
     },
     /**
      * Go to previous slide
@@ -249,6 +252,9 @@ export default {
     goPrev () {
       if (this.isPrevPossible) {
         this.isFirstSlide ? this.goSlide(this.total - 1) : this.goSlide(this.currentIndex - 1)
+      }
+      if (this.player !== null) {
+        this.player.stopVideo();
       }
     },
     /**
